@@ -10,12 +10,6 @@ os.chdir('D:\Dropbox\CodingResources\webDevelopmentProjects\Python\PythonMegaCou
 with open('data.json') as di:
         corpus = json.load(di)
 
-
-#convert list to string and newlines
-def list_to_string(old_list):
-    new_string = old_list
-    return new_string
-
 #function to look up user inputted word
 #check if word is valid to avoid traceback error before reading from database
 def lookup_word(word):
@@ -39,7 +33,7 @@ def lookup_word(word):
 #ask for user input and makes all lowercase
 user_word = (input("Enter word to define: ")).lower()
 
-
+#convert list output to string
 prelist = (lookup_word(user_word))
 if type(prelist) == list:
     for item in prelist:
