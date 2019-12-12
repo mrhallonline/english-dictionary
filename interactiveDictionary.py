@@ -3,10 +3,15 @@ import os
 
 os.chdir('D:\Dropbox\CodingResources\webDevelopmentProjects\Python\PythonMegaCourse\interactiveEnglishDictionary')
 
-def lookup_word(word):
-    with open('data.json') as di:
+with open('data.json') as di:
         corpus = json.load(di)
-        print( corpus[word])
 
-user_word = input("Enter word to define: ")        
-lookup_word(user_word)
+
+def lookup_word(word):
+        return corpus[word]
+
+user_word = input("Enter word to define: ")
+if user_word in corpus:        
+    print(lookup_word(user_word))
+else:
+    print("Doesn't match any words in dictionary. Check spelling")
