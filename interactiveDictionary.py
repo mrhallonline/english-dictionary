@@ -40,4 +40,9 @@ def lookup_word(word):
 user_word = (input("Enter word to define: ")).lower()
 
 
-print(lookup_word(user_word))
+prelist = (lookup_word(user_word))
+if type(prelist) == list:
+    for item in prelist:
+        print(item)
+else:
+    print(prelist)
