@@ -3,7 +3,10 @@ import os
 
 os.chdir('D:\Dropbox\CodingResources\webDevelopmentProjects\Python\PythonMegaCourse\interactiveEnglishDictionary')
 
-data = json.load(open("data.json"))
-print(data['rain'])
+def lookup_word(word):
+    with open('data.json') as di:
+        corpus = json.load(di)
+        print( corpus[word])
 
-def 
+user_word = input("Enter word to define: ")        
+lookup_word(user_word)
